@@ -14,7 +14,7 @@ data$DateTime <- parse_date_time(paste(data$Date, data$Time), "d/m/Y H:M:S")
 workonset <- subset(data,  parse_date_time("03/02/2007 00:00:00", "d/m/Y H:M:S") > DateTime & DateTime >= parse_date_time("01/02/2007 00:00:00", "d/m/Y H:M:S"))
 
 
-# Plot three line charts
+# Plot three lines in one graph
 plot(workonset$DateTime, as.numeric(workonset$Sub_metering_1), xlab="", ylab="Energy sub metering", col = "Black", main = "", type = "l")
 lines(workonset$DateTime, as.numeric(workonset$Sub_metering_2), col = "Red")
 lines(workonset$DateTime, as.numeric(workonset$Sub_metering_3), col = "Blue")
